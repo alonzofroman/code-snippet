@@ -1,7 +1,45 @@
+:root {
+    --pink:rgba(232, 102, 236, 1);
+    --black: black;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+header {
+    text-align: center;
+}
+
+h1{
+    color: var(--pink);
+}
+
+header > p {
+    color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/* main {
+    max-width:fit-content;
+    margin:auto;
+} */
+
+body {
+    /* vertical-align: middle; */
+    background-color: gray;
+}
+
 .row {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+}
+.justify-center {
+    justify-content: center;
 }
 
 .column {
@@ -11,15 +49,8 @@
 
 .grid {
     display: grid;
-    width: 100%;
-    grid-template-columns: repeat(12, 1fr);
-}
-
-.linear-gradient-background {
-    background-image:linear-gradient(
-        rgba(232, 102, 236, 0.3) 0%
-        rgba(232, 102, 236, 0.6) 100%
-    );
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax (3, 1fr));
 }
 
 .code-card .card-header {
@@ -33,7 +64,69 @@
     0 0 15px rgba(232, 102, 236, 1);
 }
 
-.card-header {
+h3 {
     position: relative;
     margin-top: -20px;
+    border: 2px solid white;
+    border-radius: 8px;
+    z-index: 2;
+    background-color: gray;
+    color: var(--pink);
+}
+
+div{
+    flex: 1 0 100%;
+    padding: 5px 5px;
+    border: 2px dashed white;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    color: var(--pink);
+    box-sizing: border-box;
+    transition: flex-basis 500ms linear;
+}
+
+.code-card {
+    padding: 10px 5px;
+    border: 2px solid #bfbfbf;
+    box-sizing:content-box;
+    background-image:linear-gradient(
+        rgba(232, 102, 236, 0.3) 0%,
+        rgba(232, 102, 236, 0.6) 100%
+    );
+    border-radius: 8px;
+    color: white;
+    text-align: left;
+}
+
+code {
+    -webkit-user-select: all;
+    user-select: all;
+
+}
+
+pre {
+    text-align: left;
+}
+
+@media screen and (min-width: 768px) {
+    .snippet {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .snippet:last-child {
+        flex-grow: 1;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    header {
+        width: 75%;
+    }
+
+    .snippet {
+        flex: 0 0 33.333%;
+        max-width: 33.333%;
+    }
 }
