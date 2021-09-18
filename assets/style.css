@@ -23,8 +23,15 @@ header > p {
 }
 
 main {
-    width:96%;
-    margin: 2rem auto;
+    /* margin: auto; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 96%;
+    justify-content: center;
+    align-content: center;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
 }
 
 body {
@@ -32,31 +39,17 @@ body {
     background-color: gray;
 }
 
-.row {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
-}
-.justify-center {
-    justify-content: center;
-}
 
 .card-column {
-    flex: 1 0 100%;
+    flex: 1 0 400px;
     padding: 1.5rem;
     transition: flex-basis 500ms linear;
-    margin-bottom: 1.5rem;
+    /* margin-bottom: 1.5rem; */
+    margin: 10px;
     display: flex;
     flex-direction: column;
 }
 
-.grid {
-    display: grid;
-    align-items: center;
-    grid-template-columns: repeat(auto-fit, minmax (3, 1fr));
-}
 
 .code-card .card-header {
     border-radius: 8px;
@@ -96,7 +89,7 @@ h2 {
     color: var(--pink);
 }
 
-div{
+.card-column{
     flex: 1 0 100%;
     padding: 5px 5px;
     border: 2px dashed white;
@@ -106,11 +99,12 @@ div{
     margin-left: 10px;
     color: var(--pink);
     box-sizing: border-box;
+    border-radius: 15px;
     transition: flex-basis 500ms linear;
 }
 
 .code-card {
-    padding: 10px 5px;
+    padding: 5px 5px;
     border: 2px solid #bfbfbf;
     box-sizing:content-box;
     background-image:linear-gradient(
@@ -128,16 +122,13 @@ code {
 
 }
 
-pre {
-    text-align: left;
-}
 
 @media screen and (min-width: 768px) {
-    .snippet {
+    .row {
         flex: 0 0 50%;
         max-width: 50%;
     }
-    .snippet:last-child {
+    .row:last-child {
         flex-grow: 1;
     }
 }
@@ -147,7 +138,7 @@ pre {
         width: 75%;
     }
 
-    .snippet {
+    .row {
         flex: 0 0 33.333%;
         max-width: 33.333%;
     }
